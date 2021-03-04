@@ -1,7 +1,7 @@
 const { description } = require('../../package');
 
 module.exports = {
-  base: '/33-js-concepts/',
+  base: '/',
   locales: {
     '/': {
       lang: 'ko-KR',
@@ -29,12 +29,7 @@ module.exports = {
       {
         collapsable: false,
         sidebarDepth: 1,
-        children: ['/']
-      },
-      {
-        collapsable: false,
-        sidebarDepth: 1,
-        children: ['/call-stack/']
+        children: ['/', '/call-stack/']
       }
     ]
   },

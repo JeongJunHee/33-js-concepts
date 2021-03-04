@@ -1,3 +1,7 @@
+---
+title: 1. Call Stack
+---
+
 자바스크립트는 하나의 스레드에 단 1개의 동시성만 다루는 언어이다. 이것이 의미하는 것은 자바스크립트가 한번에 1개의 작업만 다룰 수 있는 것을 의미한다. 자바스크립트는 힙, 큐와 함께 자바스크립트 동시성 모델을 구성하는 단일 콜스택을 가진다.
 
 ![Visual Representation of JS Model](../../images/visual-representation-of-js-model.png)

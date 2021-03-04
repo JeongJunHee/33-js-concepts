@@ -1,3 +1,3 @@
-# 목차
+# Table of Contents
 
-[1. 콜 스택](/call-stack/)
+[1. Call Stack](/call-stack/)

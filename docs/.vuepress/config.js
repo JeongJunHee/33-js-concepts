@@ -1,7 +1,7 @@
 const { description } = require('../../package');
 
 module.exports = {
-  base: '/',
+  base: '/33-js-concepts/',
   locales: {
     '/': {
       lang: 'ko-KR',

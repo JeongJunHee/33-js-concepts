@@ -29,7 +29,12 @@ module.exports = {
       {
         collapsable: false,
         sidebarDepth: 1,
-        children: ['/', '/call-stack/', '/primitive-types/']
+        children: [
+          '/',
+          '/call-stack/',
+          '/primitive-types/',
+          '/value-types-and-reference-types/'
+        ]
       }
     ]
   },

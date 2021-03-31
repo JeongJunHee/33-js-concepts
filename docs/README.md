@@ -6,6 +6,8 @@
 
 [3. Value Types and Reference Types](/value-types-and-reference-types/)
 
+[4. Implicit, Explicit, Nominal, Structuring and Duck Typing](/implicit-explicit-nominal-structuring-and-duck-typing/)
+
 # References
 
 [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts)

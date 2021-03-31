@@ -33,7 +33,8 @@ module.exports = {
           '/',
           '/call-stack/',
           '/primitive-types/',
-          '/value-types-and-reference-types/'
+          '/value-types-and-reference-types/',
+          '/implicit-explicit-nominal-structuring-and-duck-typing/'
         ]
       }
     ]

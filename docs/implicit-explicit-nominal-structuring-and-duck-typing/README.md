@@ -443,7 +443,7 @@ let foo: Foo = new Bar(); // Error!
 
 ### Structural Typing
 
-`OCaml` , `Haskell` , `Elm` , `Typescript` , 'Go' 와 같은 언어들은 주로 `structural type system` 이다. `Structural Typing` 은 멤버에 따라 타입을 검사하는 방법으로 `Nominal Typing` 과 반대되는 방법이다 `Structural Typing` 은 두 데이터의 타입 구조를 비교하여 호환되는 타입인지 검사한다. 한 타입이 다른 타입이 갖는 멤버를 모두 가지고 있을 경우 두 타입은 호환되는 타입이다.
+`OCaml` , `Haskell` , `Elm` , `Typescript` , `Go` 와 같은 언어들은 주로 `structural type system` 이다. `Structural Typing` 은 멤버에 따라 타입을 검사하는 방법으로 `Nominal Typing` 과 반대되는 방법이다 `Structural Typing` 은 두 데이터의 타입 구조를 비교하여 호환되는 타입인지 검사한다. 한 타입이 다른 타입이 갖는 멤버를 모두 가지고 있을 경우 두 타입은 호환되는 타입이다.
 
 ```typescript
 interface People {

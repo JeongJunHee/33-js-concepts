@@ -35,7 +35,8 @@ module.exports = {
           '/primitive-types/',
           '/value-types-and-reference-types/',
           '/implicit-explicit-nominal-structuring-and-duck-typing/',
-          '/==vs===vs-typeof/'
+          '/==vs===vs-typeof/',
+          '/function-scope-block-scope-and-lexical-scope/'
         ]
       }
     ]

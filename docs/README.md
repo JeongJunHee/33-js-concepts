@@ -11,6 +11,8 @@
 [5. == vs === vs typeof](/==vs===vs-typeof/)
 
 
+[6. Function Scope, Block Scope and Lexical Scope](/function-scope-block-scope-and-lexical-scope/)
+
 # References
 
 [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts)

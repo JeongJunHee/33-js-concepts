@@ -8,6 +8,9 @@
 
 [4. Implicit, Explicit, Nominal, Structuring and Duck Typing](/implicit-explicit-nominal-structuring-and-duck-typing/)
 
+[5. == vs === vs typeof](/==vs===vs-typeof/)
+
+
 # References
 
 [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts)

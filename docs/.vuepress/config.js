@@ -31,12 +31,12 @@ module.exports = {
         sidebarDepth: 1,
         children: [
           '/',
-          '/call-stack/',
-          '/primitive-types/',
-          '/value-types-and-reference-types/',
-          '/implicit-explicit-nominal-structuring-and-duck-typing/',
-          '/==vs===vs-typeof/',
-          '/function-scope-block-scope-and-lexical-scope/'
+          '/1.call-stack/',
+          '/2.primitive-types/',
+          '/3.value-types-and-reference-types/',
+          '/4.implicit-explicit-nominal-structuring-and-duck-typing/',
+          '/5.==vs===vs-typeof/',
+          '/6.function-scope-block-scope-and-lexical-scope/'
         ]
       }
     ]

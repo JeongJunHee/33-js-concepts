@@ -1,17 +1,17 @@
 # Table of Contents
 
-[1. Call Stack](/call-stack/)
+[1. Call Stack](/1.call-stack/)
 
-[2. Primitive Types](/primitive-types/)
+[2. Primitive Types](/2.primitive-types/)
 
-[3. Value Types and Reference Types](/value-types-and-reference-types/)
+[3. Value Types and Reference Types](/3.value-types-and-reference-types/)
 
-[4. Implicit, Explicit, Nominal, Structuring and Duck Typing](/implicit-explicit-nominal-structuring-and-duck-typing/)
+[4. Implicit, Explicit, Nominal, Structuring and Duck Typing](/4.implicit-explicit-nominal-structuring-and-duck-typing/)
 
-[5. == vs === vs typeof](/==vs===vs-typeof/)
+[5. == vs === vs typeof](/5.==vs===vs-typeof/)
 
 
-[6. Function Scope, Block Scope and Lexical Scope](/function-scope-block-scope-and-lexical-scope/)
+[6. Function Scope, Block Scope and Lexical Scope](/6.function-scope-block-scope-and-lexical-scope/)
 
 # References
 

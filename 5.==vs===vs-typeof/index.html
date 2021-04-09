@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>5. == vs === vs typeof | 33 Concepts Every JavaScript Developer Should Know</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/33-js-concepts/assets/css/0.styles.080815d9.css" as="style"><link rel="preload" href="/33-js-concepts/assets/js/app.00433b31.js" as="script"><link rel="preload" href="/33-js-concepts/assets/js/2.439d8a00.js" as="script"><link rel="preload" href="/33-js-concepts/assets/js/11.ac13480f.js" as="script"><link rel="prefetch" href="/33-js-concepts/assets/js/10.4a72fafd.js"><link rel="prefetch" href="/33-js-concepts/assets/js/12.e8bf43e0.js"><link rel="prefetch" href="/33-js-concepts/assets/js/13.914a3cf0.js"><link rel="prefetch" href="/33-js-concepts/assets/js/3.a55c7f48.js"><link rel="prefetch" href="/33-js-concepts/assets/js/4.6e5688c9.js"><link rel="prefetch" href="/33-js-concepts/assets/js/5.275dc17a.js"><link rel="prefetch" href="/33-js-concepts/assets/js/6.edb41ecd.js"><link rel="prefetch" href="/33-js-concepts/assets/js/7.a5a8b35b.js"><link rel="prefetch" href="/33-js-concepts/assets/js/8.be9f408d.js"><link rel="prefetch" href="/33-js-concepts/assets/js/9.e9591285.js">
+    <link rel="stylesheet" href="/33-js-concepts/assets/css/0.styles.080815d9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/33-js-concepts/" class="home-link router-link-active"><!----> <span class="site-name">33 Concepts Every JavaScript Developer Should Know</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/33-js-concepts/" aria-current="page" class="sidebar-link">Table of Contents</a></li><li><a href="/33-js-concepts/1.call-stack/" class="sidebar-link">1. Call Stack</a></li><li><a href="/33-js-concepts/2.primitive-types/" class="sidebar-link">2. Primitive Types</a></li><li><a href="/33-js-concepts/3.value-types-and-reference-types/" class="sidebar-link">3. Value Types and Reference Types</a></li><li><a href="/33-js-concepts/4.implicit-explicit-nominal-structuring-and-duck-typing/" class="sidebar-link">4. Implicit, Explicit, Nominal, Structuring and Duck Typing</a></li><li><a href="/33-js-concepts/5.==vs===vs-typeof/" aria-current="page" class="active sidebar-link">5. == vs === vs typeof</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/33-js-concepts/5.==vs===vs-typeof/#" class="sidebar-link">===</a></li><li class="sidebar-sub-header"><a href="/33-js-concepts/5.==vs===vs-typeof/#-2" class="sidebar-link">==</a></li><li class="sidebar-sub-header"><a href="/33-js-concepts/5.==vs===vs-typeof/#falsy-values" class="sidebar-link">Falsy Values</a></li><li class="sidebar-sub-header"><a href="/33-js-concepts/5.==vs===vs-typeof/#falsy-값-비교" class="sidebar-link">Falsy 값 비교</a></li></ul></li><li><a href="/33-js-concepts/6.function-scope-block-scope-and-lexical-scope/" class="sidebar-link">6. Function Scope, Block Scope and Lexical Scope</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_5-vs-vs-typeof"><a href="#_5-vs-vs-typeof" class="header-anchor">#</a> 5. == vs === vs typeof</h1> <p>자바스크립트는 시각적으로 유사하지만 매우 다른 동등성을 검사하는 두 가지 방법이 있다. <code>==</code> , <code>===</code> 을 사용하여 동등함을 검사할 수 있다.</p> <h2 id=""><a href="#" class="header-anchor">#</a> ===</h2> <p>자바스크립트에서 <code>===</code> 을 사용할 때, <code>엄격한 동등성</code> 을 검사한다. 이는 비교하는 대상의 <code>타입</code> 과 <code>값</code> 이 둘 다 같아야 한다는 것을 의미한다.</p> <h3 id="true"><a href="#true" class="header-anchor">#</a> true</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token number">5</span> <span class="token operator">===</span> <span class="token number">5</span>
+<span class="token comment">// true (Both numbers, equal values)</span>
+
+<span class="token string">'hello world'</span> <span class="token operator">===</span> <span class="token string">'hello world'</span>
+<span class="token comment">// true (Both Strings, equal values)</span>
+
+<span class="token boolean">true</span> <span class="token operator">===</span> <span class="token boolean">true</span>
+<span class="token comment">// true (Both Booleans, equal values)</span>
+</code></pre></div><h3 id="false"><a href="#false" class="header-anchor">#</a> false</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token number">77</span> <span class="token operator">===</span> <span class="token string">'77'</span>
+<span class="token comment">// false (Number v. String)</span>
+
+<span class="token string">'cat'</span> <span class="token operator">===</span> <span class="token string">'dog'</span>
+<span class="token comment">// false (Both are Strings, but have different values)</span>
+
+<span class="token boolean">false</span> <span class="token operator">===</span> <span class="token number">0</span>
+<span class="token comment">// false (Different type and different value)</span>
+</code></pre></div><h2 id="-2"><a href="#-2" class="header-anchor">#</a> ==</h2> <p>자바스크립트에서 <code>==</code> 을 사용할 때, <code>느슨한 동등성</code> 을 검사한다. <code>==</code> 는 <code>강제 형변환</code> 을 수행한다. <code>강제 형변환</code> 은 두 값을 공통 타입으로 변환하려고 시도한 후에만 비교하는 것을 의미한다.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token number">77</span> <span class="token operator">===</span> <span class="token string">'77'</span>
+<span class="token comment">// false (Number v. String)</span>
+</code></pre></div><p><code>77 === '77'</code> 은 다른 타입이므로 <code>false</code> 가 된다.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token number">77</span> <span class="token operator">==</span> <span class="token string">'77'</span>
+<span class="token comment">// true</span>
+</code></pre></div><p><code>77 == '77'</code> 은 강제 형변환이 이루어지기 때문에 <code>true</code> 가 된다. 자바스크립트는 실제로 값을 같은 타입으로 변환하려고 시도한다. 문자열 <code>'77'</code> 은 숫자 <code>77</code> 로 쉽게 변환될 수 있다. 따라서, <code>77</code> 과 <code>77</code> 은 같으므로 77 == '77' 은 <code>true</code> 가 된다.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token boolean">false</span> <span class="token operator">===</span> <span class="token number">0</span>
+<span class="token comment">// false (Different type and different value)</span>
+</code></pre></div><p><code>false === 0</code> 은 다른 타입, 다른 값이므로 <code>false</code> 가 된다.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token boolean">false</span> <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token comment">// true</span>
+</code></pre></div><p><code>false == 0</code> 은 <code>true</code> 가 된다. 이는 자바스크립트의 <code>falsy</code> 값과 관련이 있다.</p> <h2 id="falsy-values"><a href="#falsy-values" class="header-anchor">#</a> Falsy Values</h2> <p>자바스크립트에서 <code>false == 0</code> 이 <code>true</code> 가 되는 이유는 자바스크립트에서 <code>0</code> 은 <code>falsy</code> 값이기 때문이다. 강제 형변환을 통해 <code>0</code> 은 <code>false</code> 로 변환된다. 따라서, <code>false</code> 와 <code>false</code> 는 같으므로 <code>false == 0</code> 은 <code>true</code> 가 된다.</p> <p>자바스크립트에는 6가지 <code>falsy</code> 값이 있다.</p> <ul><li><code>fasle</code></li> <li><code>0</code></li> <li><code>&quot;&quot;</code></li> <li><code>null</code></li> <li><code>undefined</code></li> <li><code>NaN</code></li></ul> <h2 id="falsy-값-비교"><a href="#falsy-값-비교" class="header-anchor">#</a> Falsy 값 비교</h2> <h3 id="_1-false-0"><a href="#_1-false-0" class="header-anchor">#</a> 1. false, 0, &quot;&quot;</h3> <p><code>==</code> 으로 <code>false</code> , <code>0</code> , <code>&quot;&quot;</code> 을 비교할 때, 결과는 <code>true</code> 가 된다. <code>false</code> , <code>0</code> , <code>&quot;&quot;</code> 은 <code>false</code> 로 강제 형변환 되기 때문이다.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token boolean">false</span> <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token comment">// true</span>
+<span class="token number">0</span> <span class="token operator">==</span> <span class="token string">&quot;&quot;</span>
+<span class="token comment">// true</span>
+<span class="token string">&quot;&quot;</span> <span class="token operator">==</span> <span class="token boolean">false</span>
+<span class="token comment">// true</span>
+</code></pre></div><h3 id="_2-null-undefined"><a href="#_2-null-undefined" class="header-anchor">#</a> 2. null, undefined</h3> <p><code>null</code> 과 <code>undefined</code> 를 비교할 때, <code>null</code> 과 <code>undefined</code> 는 오직 자기 자신과 서로에게만 동등하다.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">null</span> <span class="token operator">==</span> <span class="token keyword">null</span>
+<span class="token comment">// true</span>
+<span class="token keyword">undefined</span> <span class="token operator">==</span> <span class="token keyword">undefined</span>
+<span class="token comment">// true</span>
+<span class="token keyword">null</span> <span class="token operator">==</span> <span class="token keyword">undefined</span>
+<span class="token comment">// true</span>
+</code></pre></div><p>만약 <code>null</code> 을 다른 값과 비교한다면 결과는 <code>false</code> 가 될 것이다.</p> <h3 id="_3-nan"><a href="#_3-nan" class="header-anchor">#</a> 3. NaN</h3> <p>마지막으로, <code>NaN</code> 은 어떠한 값과도 동등하지 않다. 또한 자기 자신과도 동등하지 않다.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token number">NaN</span> <span class="token operator">==</span> <span class="token keyword">null</span>
+<span class="token comment">// false</span>
+<span class="token number">NaN</span> <span class="token operator">==</span> <span class="token keyword">undefined</span>
+<span class="token comment">// false</span>
+<span class="token number">NaN</span> <span class="token operator">==</span> <span class="token number">NaN</span>
+<span class="token comment">// false</span>
+</code></pre></div><h1 id="references"><a href="#references" class="header-anchor">#</a> References</h1> <p><a href="https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a" target="_blank" rel="noopener noreferrer">JavaScript — Double Equals vs. Triple Equals<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br> <a href="https://velog.io/@jakeseo_me/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-33%EA%B0%80%EC%A7%80-%EA%B0%9C%EB%85%90-5-vs-3%EB%B6%84%EB%A7%8C%EC%97%90-%EB%B0%B0%EC%9A%B0%EA%B8%B0-%EB%B2%88%EC%97%AD" target="_blank" rel="noopener noreferrer">자바스크립트 개발자라면 알아야 할 33가지 개념 #5 == vs === 3분만에 배우기 (번역)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/33-js-concepts/4.implicit-explicit-nominal-structuring-and-duck-typing/" class="prev">
+        4. Implicit, Explicit, Nominal, Structuring and Duck Typing
+      </a></span> <span class="next"><a href="/33-js-concepts/6.function-scope-block-scope-and-lexical-scope/">
+        6. Function Scope, Block Scope and Lexical Scope
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/33-js-concepts/assets/js/app.00433b31.js" defer></script><script src="/33-js-concepts/assets/js/2.439d8a00.js" defer></script><script src="/33-js-concepts/assets/js/11.ac13480f.js" defer></script>
+  </body>
+</html>
